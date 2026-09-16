@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio d'Atelier Sekvou — création graphique, communication visuelle et formation en graphisme mobile.">
+  <title>Atelier Sekvou | Portfolio</title>
+  <style>
+    :root {
+      --blue: #0b4aa2;
+      --blue2: #063574;
+      --gold: #d99518;
+      --ink: #10213d;
+      --muted: #667085;
+      --bg: #f6f9ff;
+      --white: #fff;
+      --line: #e4eaf3;
+      --shadow: 0 18px 50px rgba(9, 55, 115, .12);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(228, 234, 243, .9)
+    }
+
+    nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--blue)
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 50%
+    }
+
+    .brand span {
+      font-size: 1.05rem
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-weight: 700;
+      color: #334155
+    }
+
+    .navlinks a:hover {
+      color: var(--blue)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: .2s
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(11, 74, 162, .22)
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--blue2)
+    }
+
+    .btn-light {
+      background: #fff;
+      border-color: var(--line);
+      color: var(--blue)
+    }
+
+    .hero {
+      padding: 78px 0 70px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(11, 74, 162, .15), transparent 32%),
+        radial-gradient(circle at 10% 90%, rgba(217, 149, 24, .12), transparent 28%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: #eaf2ff;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: .85rem
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 5.2rem);
+      line-height: .98;
+      margin: 18px 0
+    }
+
+    h1 span {
+      color: var(--blue)
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 650px
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 34px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      transform: rotate(2deg)
+    }
+
+    .hero-card img {
+      border-radius: 24px;
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      object-position: center top
+    }
+
+    section {
+      padding: 86px 0
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 38px
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .8rem
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin: 8px 0 12px
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 50px;
+      align-items: center
+    }
+
+    .about-card {
+      background: linear-gradient(145deg, var(--blue), #0b63ca);
+      color: #fff;
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: var(--shadow)
+    }
+
+    .about-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 24px;
+      background: #dbe9ff;
+      margin-bottom: 20px
+    }
+
+    .about-card h3 {
+      font-size: 1.8rem;
+      margin: 0 0 8px
+    }
+
+    .about-text p {
+      color: var(--muted)
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px
+    }
+
+    .chip {
+      padding: 9px 13px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-weight: 800;
+      color: var(--blue)
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px
+    }
+
+    .service {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 8px 30px rgba(9, 55, 115, .05)
+    }
+
+    .service .icon {
+      font-size: 2rem
+    }
+
+    .service h3 {
+      margin: 10px 0 6px
+    }
+
+    .service p {
+      color: var(--muted);
+      margin: 0
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px
+    }
+
+    .work {
+      background: #fff;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 35px rgba(9, 55, 115, .08)
+    }
+
+    .work img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover
+    }
+
+    .work-body {
+      padding: 22px
+    }
+
+    .work-body h3 {
+      margin: 0 0 5px
+    }
+
+    .work-body p {
+      margin: 0;
+      color: var(--muted)
+    }
+
+    .work-tag {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 10px;
+      background: #edf4ff;
+      color: var(--blue);
+      font-size: .78rem;
+      font-weight: 900;
+      border-radius: 999px
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 30px
+    }
+
+    .stat {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center
+    }
+
+    .stat strong {
+      font-size: 2rem;
+      color: var(--blue);
+      display: block
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px
+    }
+
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow)
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .contact-item:last-child {
+      border-bottom: 0
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: #edf4ff;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem
+    }
+
+    footer {
+      background: #071d3b;
+      color: #dbe7f7;
+      padding: 35px 0
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap
+    }
+
+    footer strong {
+      color: #fff
+    }
+
+    .float-wa {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #18a957;
+      color: #fff;
+      font-size: 1.55rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .2);
+      z-index: 60
+    }
+
+    @media(max-width:850px) {
+      .navlinks {
+        display: none
+      }
+
+      .hero-grid,
+      .about,
+      .contact-wrap {
+        grid-template-columns: 1fr
+      }
+
+      .hero {
+        padding-top: 50px
+      }
+
+      .hero-card {
+        transform: none
+      }
+
+      .hero-card img {
+        height: 430px
+      }
+
+      .services {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:560px) {
+      section {
+        padding: 62px 0
+      }
+
+      .services,
+      .portfolio,
+      .stats {
+        grid-template-columns: 1fr
+      }
+
+      .work img {
+        height: auto;
+        max-height: 520px;
+        object-fit: contain;
+        background: #f4f6fa
+      }
+
+      .brand span {
+        font-size: .92rem
+      }
+
+      h1 {
+        font-size: 3rem
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#accueil">
+          <img src="logo-icon.png" alt="Logo Atelier Sekvou">
+          <span>ATELIER SEKVOU</span>
+        </a>
+        <div class="navlinks">
+          <a href="#accueil">Accueil</a>
+          <a href="#apropos">À propos</a>
+          <a href="#services">Services</a>
+          <a href="#realisations">Réalisations</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="btn btn-primary"
+          href="https://wa.me/237691198699?text=Bonjour%20Atelier%20Sekvou%2C%20je%20souhaite%20parler%20d%27un%20projet."
+          target="_blank">Me contacter</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Graphisme • Communication visuelle • Formation</span>
+          <h1>Ensemble, <span>construisons</span> votre image.</h1>
+          <p>Bienvenue dans le portfolio d'Atelier Sekvou. Je crée des visuels modernes et percutants pour les
+            entreprises, associations, événements et particuliers, tout en accompagnant les passionnés à travers des
+            formations pratiques en graphisme mobile.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#realisations">Voir mes réalisations</a>
+            <a class="btn btn-light" href="https://wa.me/237691198699?text=Bonjour%20Atelier%20Sekvou%20%F0%9F%91%8B"
+              target="_blank">WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="formation-graphisme.png" alt="Formation en graphisme mobile par Atelier Sekvou">
+        </div>
+      </div>
+    </section>
+
+    <section id="apropos">
+      <div class="container about">
+        <div class="about-card">
+          <img src="logo.png" alt="Logo Atelier Sekvou">
+          <h3>ATELIER SEKVOU</h3>
+          <p>Création graphique & formation numérique</p>
+          <div class="chips">
+            <span class="chip">Design graphique</span>
+            <span class="chip">Graphisme mobile</span>
+            <span class="chip">Formation</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="kicker">À propos</div>
+          <h2>Donner une identité forte à vos idées.</h2>
+          <p>Atelier Sekvou accompagne les particuliers, organisations, associations et structures professionnelles dans
+            la création de supports visuels destinés à mieux communiquer.</p>
+          <p>Mon approche : comprendre votre message, construire une identité visuelle claire et produire un design
+            adapté à votre public et à votre objectif.</p>
+          <div class="stats">
+            <div class="stat"><strong>Créatif</strong><span>Design sur mesure</span></div>
+            <div class="stat"><strong>Pratique</strong><span>Formations orientées terrain</span></div>
+            <div class="stat"><strong>Local</strong><span>Garoua • Cameroun</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Mes services</div>
+          <h2>Ce que je peux faire pour vous</h2>
+          <p>Des solutions visuelles pour valoriser votre activité, votre événement ou votre projet.</p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <div class="icon">🎨</div>
+            <h3>Affiches & flyers</h3>
+            <p>Des visuels publicitaires et événementiels pensés pour attirer l'attention.</p>
+          </article>
+          <article class="service">
+            <div class="icon">✒️</div>
+            <h3>Logos & identité</h3>
+            <p>Création de logos et éléments graphiques pour donner une identité à votre marque.</p>
+          </article>
+          <article class="service">
+            <div class="icon">📱</div>
+            <h3>Graphisme mobile</h3>
+            <p>Création de visuels professionnels directement depuis un smartphone.</p>
+          </article>
+          <article class="service">
+            <div class="icon">🖼️</div>
+            <h3>Retouche photo</h3>
+            <p>Amélioration, détourage, colorimétrie et préparation de photos pour vos supports.</p>
+          </article>
+          <article class="service">
+            <div class="icon">🎬</div>
+            <h3>Contenu visuel</h3>
+            <p>Conception de contenus adaptés aux réseaux sociaux et à la communication digitale.</p>
+          </article>
+          <article class="service">
+            <div class="icon">👨🏽‍🏫</div>
+            <h3>Formation</h3>
+            <p>Accompagnement pratique en graphisme mobile et outils de création visuelle.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="realisations">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Portfolio</div>
+          <h2>Quelques réalisations</h2>
+          <p>Une sélection de créations réalisées pour différents besoins de communication.</p>
+        </div>
+        <div class="portfolio">
+          <article class="work">
+            <img src="formation-graphisme.png" alt="Affiche de formation en graphisme mobile">
+            <div class="work-body">
+              <h3>Campagne de formation</h3>
+              <p>Affiche promotionnelle pour une formation en graphisme mobile.</p><span class="work-tag">Communication
+                • Formation</span>
+            </div>
+          </article>
+          <article class="work">
+            <img src="birthday-design.png" alt="Visuel anniversaire">
+            <div class="work-body">
+              <h3>Visuel anniversaire</h3>
+              <p>Composition festive avec mise en valeur du portrait et de l'information.</p><span
+                class="work-tag">Événementiel</span>
+            </div>
+          </article>
+          <article class="work">
+            <img src="camp-jeunes.png" alt="Affiche de camp des jeunes">
+            <div class="work-body">
+              <h3>Communication événementielle</h3>
+              <p>Visuel de bienvenue pour un événement de jeunesse.</p><span class="work-tag">Événement •
+                Association</span>
+            </div>
+          </article>
+          <article class="work">
+            <img src="admissions.png" alt="Affiche admissions ouvertes">
+            <div class="work-body">
+              <h3>Affiche institutionnelle</h3>
+              <p>Conception d'une affiche d'admissions avec hiérarchie claire de l'information.</p><span
+                class="work-tag">Institutionnel</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Contact</div>
+          <h2>Un projet ? Parlons-en.</h2>
+          <p>Pour une affiche, un logo, une formation ou tout autre projet graphique, contactez Atelier Sekvou.</p>
+        </div>
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <div class="contact-item">
+              <div class="contact-icon">📱</div>
+              <div><strong>WhatsApp</strong><br><a href="https://wa.me/237691198699" target="_blank">+237 691 19 86
+                  99</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div><strong>E-mail</strong><br><a href="mailto:ezekielsekvou@gmail.com">ezekielsekvou@gmail.com</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📘</div>
+              <div><strong>Facebook</strong><br><a href="https://www.facebook.com/search/pages/?q=Atelier%20Sekvou"
+                  target="_blank">Atelier Sekvou</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div><strong>Zone</strong><br>Garoua, Cameroun</div>
+            </div>
+          </div>
+          <div class="contact-card" style="background:linear-gradient(145deg,#0b4aa2,#063574);color:#fff;">
+            <h3 style="font-size:1.8rem;margin-top:0">Votre image mérite le meilleur.</h3>
+            <p style="color:#dce9fb">Présentez votre idée, votre événement ou votre activité. Nous construisons ensemble
+              un visuel qui vous ressemble.</p>
+            <a class="btn" style="background:#fff;color:#0b4aa2;margin-top:15px"
+              href="https://wa.me/237691198699?text=Bonjour%20Atelier%20Sekvou%2C%20je%20souhaite%20un%20devis."
+              target="_blank">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="float-wa" href="https://wa.me/237691198699" target="_blank"
+    aria-label="Contacter Atelier Sekvou sur WhatsApp">☏</a>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>ATELIER SEKVOU</strong><br><small>Ensemble, construisons votre image.</small></div>
+      <div><small>© 2026 Atelier Sekvou — Tous droits réservés.</small></div>
+    </div>
+  </footer>
+</body>
+
+</html>
